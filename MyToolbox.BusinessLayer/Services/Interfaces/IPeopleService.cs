@@ -1,4 +1,4 @@
-﻿using MyToolbox.Shared;
+﻿using MyToolbox.Shared.Models;
 
 namespace MyToolbox.BusinessLayer.Services.Interfaces;
 

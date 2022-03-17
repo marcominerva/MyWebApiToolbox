@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using MyToolbox.Shared;
+using MyToolbox.Shared.Models;
 using Entities = MyToolbox.DataAccessLayer.Entities;
 
 namespace MyToolbox.BusinessLayer.MapperProfiles;

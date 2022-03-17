@@ -1,6 +1,6 @@
 ﻿using MyToolbox.Shared.Models.Common;
 
-namespace MyToolbox.Shared;
+namespace MyToolbox.Shared.Models;
 
 public class Person : BaseObject
 {

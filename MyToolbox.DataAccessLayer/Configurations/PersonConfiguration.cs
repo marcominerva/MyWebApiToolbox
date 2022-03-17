@@ -13,6 +13,7 @@ public class PersonConfiguration : BaseEntityConfiguration<Person>
 
         builder.ToTable("People");
 
-        builder.Property(x => x.Name).IsRequired().HasMaxLength(50);
+        builder.Property(x => x.Name).IsRequired().HasMaxLength(30);
+        builder.Property(x => x.City).HasMaxLength(50);
     }
 }

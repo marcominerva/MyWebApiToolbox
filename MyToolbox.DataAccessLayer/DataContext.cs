@@ -50,5 +50,4 @@ public class DataContext : DbContext, IDataContext
             await transaction.CommitAsync().ConfigureAwait(false);
         });
     }
-
 }

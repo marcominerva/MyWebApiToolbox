@@ -3,7 +3,7 @@ using AutoMapper.QueryableExtensions;
 using Microsoft.EntityFrameworkCore;
 using MyToolbox.BusinessLayer.Services.Interfaces;
 using MyToolbox.DataAccessLayer;
-using MyToolbox.Shared;
+using MyToolbox.Shared.Models;
 using Entities = MyToolbox.DataAccessLayer.Entities;
 
 namespace MyToolbox.BusinessLayer.Services;
