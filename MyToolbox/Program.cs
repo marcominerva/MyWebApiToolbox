@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using FluentValidation;
 using FluentValidation.AspNetCore;
 using Hellang.Middleware.ProblemDetails;
 using MicroElements.Swashbuckle.FluentValidation.AspNetCore;
@@ -37,18 +38,22 @@ builder.Services.AddControllers()
     });
 
 builder.Services.AddAutoMapper(typeof(PersonMapperProfile).Assembly);
-builder.Services.AddFluentValidation(options =>
+
+builder.Services.AddFluentValidationAutoValidation(options =>
 {
-    options.RegisterValidatorsFromAssemblyContaining<SaveOrderRequestValidator>();
+    options.DisableDataAnnotationsValidation = true;
 });
+
+builder.Services.AddValidatorsFromAssemblyContaining<SaveOrderRequestValidator>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
+
 builder.Services.AddSwaggerGen()
-    .AddFluentValidationRulesToSwagger(options =>
-    {
-        options.SetNotNullableIfMinLengthGreaterThenZero = true;
-    });
+.AddFluentValidationRulesToSwagger(options =>
+{
+    options.SetNotNullableIfMinLengthGreaterThenZero = true;
+});
 
 builder.Services.AddDbContext<DataContext>(options =>
 {
