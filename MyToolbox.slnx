@@ -1,0 +1,12 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path=".github/copilot-instructions.md" />
+    <File Path="Directory.Build.props" />
+  </Folder>
+  <Project Path="src/MyToolbox.Api/MyToolbox.Api.csproj" />
+  <Project Path="src/MyToolbox.Authentication/MyToolbox.Authentication.csproj" />
+  <Project Path="src/MyToolbox.BusinessLayer/MyToolbox.BusinessLayer.csproj" />
+  <Project Path="src/MyToolbox.DataAccessLayer/MyToolbox.DataAccessLayer.csproj" />
+  <Project Path="src/MyToolbox.Shared/MyToolbox.Shared.csproj" />
+</Solution>
