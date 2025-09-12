@@ -384,3 +384,4 @@ FodyWeavers.xsd
 *.sln.iml
 
 /SqlDatabaseVectorSearch/appsettings.local.json
+/src/MyToolbox.Api/appsettings.local.json
