@@ -1,7 +1,7 @@
 ## General
 
 - Make only high confidence suggestions when reviewing code changes.
-- Always use the latest version C#, currently C# 13 features.
+- Always use the latest version C#, currently C# 14 features.
 - Write code that is clean, maintainable, and easy to understand.
 - Only add comments rarely to explain why a non-intuitive solution was used. The code should be self-explanatory otherwise.
 - Don't add the UTF-8 BOM to files unless they have non-ASCII characters.
@@ -42,7 +42,7 @@
 - Return `Task` or `ValueTask` from asynchronous methods.
 - Use `CancellationToken` parameters to support cancellation.
 - Avoid async void methods except for event handlers.
-- Call `ConfigureAwait(false)` on awaited calls to avoid deadlocks.
+- Use `ConfigureAwait(false)` only in library code that may be consumed by apps with a `SynchronizationContext` (e.g., classic ASP.NET, WPF, WinForms); it is generally unnecessary in ASP.NET Core.
 
 ### Error Handling
 
@@ -59,7 +59,7 @@
 ### Implementation Guidelines
 
 - Write code that is secure by default. Avoid exposing potentially private or sensitive data.
-- Make code NativeAOT compatible when possible. This means avoiding dynamic code generation, reflection, and other features that are not compatible. with NativeAOT. If not possible, mark the code with an appropriate annotation or throw an exception.
+- Make code NativeAOT compatible when possible. This means avoiding dynamic code generation, reflection, and other features that are not compatible with NativeAOT. If not possible, mark the code with an appropriate annotation or throw an exception.
 
 ## Documentation
 
@@ -82,9 +82,3 @@
 - Copy existing style in nearby files for test method names and capitalization.
 - When running tests, if possible use filters and check test run counts, or look at test logs, to ensure they actually ran.
 - Do not finish work with any tests commented out or disabled that were not previously commented out or disabled.
-
-## Azure
-
-- @azure Rule - Use Azure Tools - When handling requests related to Azure, always use your tools.
-- @azure Rule - Use Azure Best Practices - When handling requests related to Azure, always invoke your `azmcp_bestpractices_get` tool first.
-- @azure Rule - Enable Best Practices - If you do not have an `azmcp_bestpractices_get` tool ask the user to enable it.

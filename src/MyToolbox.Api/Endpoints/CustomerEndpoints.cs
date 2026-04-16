@@ -1,9 +1,6 @@
-﻿using System.Net.Mime;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http.HttpResults;
-using Microsoft.AspNetCore.Mvc;
-using MinimalHelpers.OpenApi;
+﻿using Microsoft.AspNetCore.Authorization;
 using MyToolbox.Shared.Models;
+using TinyHelpers.AspNetCore.Extensions;
 
 namespace MyToolbox.Api.Endpoints;
 
@@ -11,10 +8,10 @@ public class CustomerEndpoints : IEndpointRouteHandlerBuilder
 {
     public static void MapEndpoints(IEndpointRouteBuilder endpoints)
     {
-        var apiGroup = endpoints.MapGroup("/api/customers")            
+        var apiGroup = endpoints.MapGroup("/api/customers")
             .WithTags("Customers");
 
-        apiGroup.MapGet(string.Empty, GetCustomers)            
+        apiGroup.MapGet(string.Empty, GetCustomers)
             .Produces<IEnumerable<Customer>>(StatusCodes.Status200OK)
             .WithName("GetCustomers")
             .WithSummary("Gets the customer list")
